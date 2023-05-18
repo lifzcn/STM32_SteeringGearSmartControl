@@ -113,9 +113,9 @@ int main(void)
 	OLED_ShowChinese(x + 16 * 1, y + 2 * 3, 12);
 	OLED_ShowChinese(x + 16 * 2, y + 2 * 3, 13);
 	OLED_ShowChinese(x + 16 * 3, y + 2 * 3, 14);
-	OLED_ShowChar(x + 16 * 3 + 8 * 0, y + 2 * 3, ':', 16);
+	OLED_ShowChar(x + 16 * 4 + 8 * 0, y + 2 * 3, ':', 16);
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
-	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 500);
+	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 1000);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -126,16 +126,16 @@ int main(void)
     {
 			StepMotor_Start(360, 0);
 			HAL_Delay(100);
-			__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 1000);
+			__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 500);
 			OLED_ShowNum(x + 16 * 5 + 8 * 1, y + 2 * 2, 45, 2, 16);
 			OLED_ShowChar(x + 16 * 5 + 8 * 3, y + 2 * 2, '*', 16);
 			HAL_Delay(1000);
-			__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 500);
+			__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 1000);
 			OLED_ShowNum(x + 16 * 5 + 8 * 1, y + 2 * 2, 0, 2, 16);
 			OLED_ShowChar(x + 16 * 5 + 8 * 3, y + 2 * 2, '*', 16);
 			HAL_Delay(4000);
-			OLED_ShowNum(x + 16 * 3 + 8 * 1, y + 2 * 3, i + 1, 2, 16);
-			OLED_ShowChinese(x + 16 * 3 + 8 * 1, y + 2 * 3, 13);
+			OLED_ShowNum(x + 16 * 4 + 8 * 1, y + 2 * 3, i + 1, 2, 16);
+			OLED_ShowChinese(x + 16 * 4 + 8 * 3, y + 2 * 3, 13);
     }
     /* USER CODE END WHILE */
 
