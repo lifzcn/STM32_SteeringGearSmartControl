@@ -57,6 +57,8 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define SteeringGear_Pin GPIO_PIN_0
+#define SteeringGear_GPIO_Port GPIOA
 #define StepMotor_IN1_Pin GPIO_PIN_12
 #define StepMotor_IN1_GPIO_Port GPIOB
 #define StepMotor_IN2_Pin GPIO_PIN_13
